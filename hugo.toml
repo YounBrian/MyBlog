@@ -30,7 +30,7 @@ paginate = 20
   # 全局作者信息
   [params.author]
     name = "Younbrian"
-    avatar = "/images/avatar.jpg" 
+    avatar = "images/avatar.jpg" 
 
   [params.section]
     # 归档页面配置
