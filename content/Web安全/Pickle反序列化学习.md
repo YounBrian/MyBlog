@@ -39,10 +39,10 @@ print(p_a)
 
 Python3运行的结果
 
-![](images/1753878813788-a9ce6159-7cb1-42f3-b6c3-fdcad93971a3.png)
+![](/images/1753878813788-a9ce6159-7cb1-42f3-b6c3-fdcad93971a3.png)
 Python2 运行的结果
 
-![](images/1753878934848-1b6c145e-51fc-4e3a-a541-1239a41f9995.png)
+![](/images/1753878934848-1b6c145e-51fc-4e3a-a541-1239a41f9995.png)
 
 python2的结果中几乎完全由 ASCII 字符组成，肉眼可见类名和属性名，而python3的结果中包含大量不可打印的十六进制字节码
 
@@ -267,7 +267,7 @@ print(p_a)
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-![](images/1753882225279-bab45fbf-0c42-427f-81cf-a152a42ad528.png)
+![](/images/1753882225279-bab45fbf-0c42-427f-81cf-a152a42ad528.png)
 
 这种生成payload的方式固然简便，但是由于``pickle``序列化时不同的``protocol``生成的字节串中有一些固定的字节，很容易被黑名单拦截，所以很多时候需要构造``opcode ``
 
@@ -290,7 +290,7 @@ pickle.loads(opcode)
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-![](images/1765290834258-e6259d20-e7ae-400b-b5af-2a625f6c2516.png)
+![](/images/1765290834258-e6259d20-e7ae-400b-b5af-2a625f6c2516.png)
 
 #### 全局变量覆盖与类属性污染
 
@@ -393,7 +393,7 @@ b"cbuiltins\nexec\np0\n0cbuiltins\nsetattr\np1\n0cbuiltins\ndict\np2\n0cbuiltins
 ```
 
 
-![](images/1765356194696-2b37a538-5ffa-45f0-89af-46bccaeedd21.png)
+![](/images/1765356194696-2b37a538-5ffa-45f0-89af-46bccaeedd21.png)
 
 方法二：构建新的 code 对象并将覆盖原函数的 code 对象
 
