@@ -23,8 +23,8 @@ paginate = 20
   version = "0.3.x"
   dateFormat = "2006-01-02"
   enableGitInfo = true
-  relativeURLs = false
-  canonifyURLs = true
+  relativeURLs = true
+  canonifyURLs = false
   
   # 资源管理（解决子目录下样式不加载的关键）
   [params.asset]
