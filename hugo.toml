@@ -1,5 +1,5 @@
 # 1. 基础配置 - 确保仓库名大小写与 GitHub 一致，末尾带斜杠
-baseURL = 'https://younbrian.github.io/MyBlog/'
+baseURL = "https://younbrian.github.io/MyBlog/"
 languageCode = 'zh-cn'
 title = 'Younbrian’s Blog'
 theme = 'FixIt'
@@ -21,6 +21,7 @@ paginate = 20
   version = "0.3.x"
   dateFormat = "2006-01-02"
   enableGitInfo = true
+  canonifyURLs = true
   
   # 资源管理（解决子目录下样式不加载的关键）
   [params.asset]
