@@ -4,7 +4,9 @@ languageCode = 'zh-cn'
 title = 'Younbrian’s Blog'
 theme = 'FixIt'
 paginate = 20
-
+[outputs]
+  home = ["HTML", "RSS"]
+  page = ["HTML"]
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
