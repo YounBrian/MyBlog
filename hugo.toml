@@ -1,0 +1,58 @@
+baseURL = 'https://example.org/'
+locale = 'zh-cn'
+title = 'Younbrian’s Blog'
+theme = 'FixIt'
+paginate = 20
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true 
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    style = "monokai" 
+[params]
+  enableGitInfo = true
+  dateFormat = "2006-01-02"
+  # 全局作者信息
+  [params.author]
+    name = "Younbrian"
+    #link = "/about"
+    avatar = "/images/avatar.jpg" 
+  [params.section]
+    # 专门针对归档页面的配置
+    [params.section.archives]
+      enable = true       # 开启归档功能
+      paginate = 20       # 如果你想让归档页的翻页数量与其他页不同，可以在这单独设
+  [params.page]
+  # 是否在文章顶部显示元数据
+    [params.page.header]
+      date = true       # 显示日期
+      categories = true # 显示分类
+      tags = true       # 显示标签
+      author = true     # 显示作者
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series" # FixIt 支持系列文章
+
+[[menu.main]]
+  identifier = "archives"
+  name = "归档"
+  url = "/archives/"
+  weight = 2  # 数字越小越靠左，建议放在“首页”后面
+  pre = "<i class='fa-solid fa-archive fa-fw'></i>" # FixIt 支持 FontAwesome 图标
+
+[[menu.main]]
+  identifier = "categories"
+  name = "分类"
+  url = "/categories/"
+  weight = 3
+
+[[menu.main]]
+  identifier = "tags"
+  name = "标签"
+  url = "/tags/"
+  weight = 4
