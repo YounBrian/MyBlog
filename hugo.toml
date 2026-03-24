@@ -1,58 +1,73 @@
-baseURL = 'https://example.org/'
-locale = 'zh-cn'
+# 1. 基础配置 - 确保仓库名大小写与 GitHub 一致，末尾带斜杠
+baseURL = 'https://younbrian.github.io/MyBlog/'
+languageCode = 'zh-cn'
 title = 'Younbrian’s Blog'
 theme = 'FixIt'
 paginate = 20
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
+      # 允许在 Markdown 中直接书写 HTML（对嵌入 Payload 或自定义样式很有用）
       unsafe = true 
   [markup.highlight]
     codeFences = true
     guessSyntax = true
     lineNos = true
     style = "monokai" 
+
 [params]
-  enableGitInfo = true
+  # FixIt 核心参数
+  version = "0.3.x"
   dateFormat = "2006-01-02"
+  enableGitInfo = true
+  
+  # 资源管理（解决子目录下样式不加载的关键）
+  [params.asset]
+    fingerprint = true
+
   # 全局作者信息
   [params.author]
     name = "Younbrian"
-    #link = "/about"
     avatar = "/images/avatar.jpg" 
+
   [params.section]
-    # 专门针对归档页面的配置
+    # 归档页面配置
     [params.section.archives]
-      enable = true       # 开启归档功能
-      paginate = 20       # 如果你想让归档页的翻页数量与其他页不同，可以在这单独设
+      enable = true
+      paginate = 20
+
   [params.page]
-  # 是否在文章顶部显示元数据
+    # 文章顶部元数据显示
     [params.page.header]
-      date = true       # 显示日期
-      categories = true # 显示分类
-      tags = true       # 显示标签
-      author = true     # 显示作者
+      date = true
+      categories = true
+      tags = true
+      author = true
 
 [taxonomies]
   category = "categories"
   tag = "tags"
-  series = "series" # FixIt 支持系列文章
+  series = "series"
 
+# 2. 菜单配置 - 这里的 URL 去掉了开头的斜杠，确保在子目录下跳转正确
 [[menu.main]]
   identifier = "archives"
   name = "归档"
-  url = "/archives/"
-  weight = 2  # 数字越小越靠左，建议放在“首页”后面
-  pre = "<i class='fa-solid fa-archive fa-fw'></i>" # FixIt 支持 FontAwesome 图标
+  url = "archives"
+  weight = 2
+  pre = "<i class='fa-solid fa-archive fa-fw'></i>"
 
 [[menu.main]]
   identifier = "categories"
   name = "分类"
-  url = "/categories/"
+  url = "categories"
   weight = 3
+  pre = "<i class='fa-solid fa-folder-open fa-fw'></i>"
 
 [[menu.main]]
   identifier = "tags"
   name = "标签"
-  url = "/tags/"
+  url = "tags"
   weight = 4
+  pre = "<i class='fa-solid fa-tags fa-fw'></i>"
