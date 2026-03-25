@@ -4,8 +4,9 @@ languageCode = 'zh-cn'
 title = 'Younbrian’s Blog'
 theme = 'FixIt'
 paginate = 20
+buildFuture = true
 [outputs]
-  home = ["HTML", "RSS"]
+  home = ["HTML", "RSS","JSON"]
   page = ["HTML"]
 [markup]
   [markup.goldmark]
@@ -24,11 +25,13 @@ paginate = 20
   dateFormat = "2006-01-02"
   enableGitInfo = true
   relativeURLs = false
-  canonifyURLs = false
+  canonifyURLs = true
+
+  keywords = ["CTF", "WebSecurity"]
   
   # 资源管理（解决子目录下样式不加载的关键）
   [params.asset]
-    fingerprint = true
+    fingerprint = false
 
   # 全局作者信息
   [params.author]
@@ -38,40 +41,55 @@ paginate = 20
   [params.section]
     # 归档页面配置
     [params.section.archives]
-      enable = true
+      enable = false
       paginate = 20
-
+      expand = true
+      type = "posts"
   [params.page]
     # 文章顶部元数据显示
     [params.page.header]
+      avatar = false
+      author = true
       date = true
       categories = true
       tags = true
-      author = true
+  [params.home]
+    # 首页副标题，支持简单的 Markdown
+    subtitle = "Cyber Security Researcher & CTF Player"
+    # 是否显示社交链接
+    social = true
+    # 首页文章列表的显示模式 ("posts" 显示文章列表, "profile" 仅显示个人信息)
+    type = "posts"
+    [params.home.profile]
+      enable = true
+      # 你的头像路径（由于我们设置了相对路径，确保 images/avatar.jpg 存在）
+      avatarURL = "images/avatar.jpg"
+      title = "Younbrian"
+      subtitle = "Yoo | 信息安全研究"
+      # 是否显示打字机效果
+      typeit = true
+      # 是否显示社交图标
+      social = true
+  [params.social]
+    GitHub = "YounBrian"
+    Email = "Younbrian886@163.com"
+  
 
 [taxonomies]
   category = "categories"
   tag = "tags"
   series = "series"
 
-# 2. 菜单配置 - 这里的 URL 去掉了开头的斜杠，确保在子目录下跳转正确
-[[menu.main]]
-  identifier = "archives"
-  name = "归档"
-  url = "archives"
-  weight = 2
-  pre = "<i class='fa-solid fa-archive fa-fw'></i>"
-
 [[menu.main]]
   identifier = "categories"
   name = "分类"
   url = "categories"
-  weight = 3
+  weight = 2
   pre = "<i class='fa-solid fa-folder-open fa-fw'></i>"
 
 [[menu.main]]
   identifier = "tags"
   name = "标签"
   url = "tags"
-  weight = 4
+  weight = 3
   pre = "<i class='fa-solid fa-tags fa-fw'></i>"
