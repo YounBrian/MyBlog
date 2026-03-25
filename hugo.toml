@@ -48,11 +48,12 @@ buildFuture = true
   [params.page]
     # 文章顶部元数据显示
     [params.page.header]
-      avatar = false
       author = true
+      avatar= false
       date = true
       categories = true
       tags = true
+    
   [params.home]
     # 首页副标题，支持简单的 Markdown
     subtitle = "Cyber Security Researcher & CTF Player"
