@@ -758,6 +758,8 @@ setattr(myfunc, "__code__", new_code)
 return
 
 ```
+用``bytes``将整数list转换为``bytes``对象
+
 
 
 注意: Python 3.11以上的版本都可以用Python 3.11的pker模板，不过``co_code``和``co_linetable``
